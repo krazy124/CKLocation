@@ -1111,35 +1111,40 @@ export let store = [
   },
 ];
 export let loadSite = [
-   {
-     number: 112,
-       facility: "MAGELLAN",
-       address: " 4200 SINGLETON BLVD, DALLAS, TX",
-       toTerminal: 20,
-   },
-      {
-     number: 113,
-       facility: "MOTIVA",
-       address: " 3900 SINGLETON BLVD, DALLAS, TX ",
-       toTerminal: 20,
-   },
-   {
-     number: 114,
-       facility: "NUSTAR",
-       address: " 1700 MUSTANG CT, SOUTHLAKE, TX ",
-       toTerminal: 19 ,
-   },
-   {
-     number: 115,
-       facility: "ALEDO",
-       address: " 6000, I-20, ALEDO, TX",
-       toTerminal: 39,
-   },
-   {
-     number: 116,
-       facility: "Cado Mills",
-       address: " 2738 CO RD 2168, CADDO MILLS, TX",
-       toTerminal: 65,
-   },
-   
-   ]
+  {
+    number: 112,
+    facility: "MAGELLAN",
+    address: " 4200 SINGLETON BLVD, DALLAS, TX",
+    toTerminal: 20,
+  },
+  {
+    number: 113,
+    facility: "MOTIVA",
+    address: " 3900 SINGLETON BLVD, DALLAS, TX ",
+    toTerminal: 20,
+  },
+  {
+    number: 114,
+    facility: "NUSTAR",
+    address: " 1700 MUSTANG CT, SOUTHLAKE, TX ",
+    toTerminal: 19,
+  },
+  {
+    number: 115,
+    facility: "ALEDO",
+    address: " 6000, I-20, ALEDO, TX",
+    toTerminal: 39,
+  },
+  {
+    number: 116,
+    facility: "Cado Mills",
+    address: " 2738 CO RD 2168, CADDO MILLS, TX",
+    toTerminal: 65,
+  },
+  {
+    number: 117,
+    facility: "Terminal (Preloaded) ",
+    address: "3485 ROY ORR BLVD, GRAND PRAIRIE, TX",
+    toTerminal: 0,
+  },
+];
