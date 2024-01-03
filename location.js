@@ -8,6 +8,7 @@ export let store = [
     nustar: 19,
     aledo: 39,
     cado: 65,
+    terminal: 0,
   },
   {
     number: 2,
@@ -18,6 +19,7 @@ export let store = [
     nustar: 20,
     aledo: 35,
     cado: 61,
+    terminal: 14,
   },
   {
     number: 3,
@@ -28,6 +30,7 @@ export let store = [
     nustar: 23,
     aledo: 40,
     cado: 61,
+    terminal: 16,
   },
   {
     number: 4,
@@ -38,6 +41,7 @@ export let store = [
     nustar: 16,
     aledo: 36,
     cado: 59,
+    terminal: 10,
   },
   {
     number: 5,
@@ -48,6 +52,7 @@ export let store = [
     nustar: 19,
     aledo: 38,
     cado: 58,
+    terminal: 13,
   },
   {
     number: 6,
@@ -58,6 +63,7 @@ export let store = [
     nustar: 31,
     aledo: 32,
     cado: 71,
+    terminal: 27,
   },
   {
     number: 7,
@@ -68,6 +74,7 @@ export let store = [
     nustar: 18,
     aledo: 36,
     cado: 56,
+    terminal: 11,
   },
   {
     number: 8,
@@ -78,6 +85,7 @@ export let store = [
     nustar: 42,
     aledo: 75,
     cado: 64,
+    terminal: 48,
   },
   {
     number: 9,
@@ -88,6 +96,7 @@ export let store = [
     nustar: 42,
     aledo: 61,
     cado: 40,
+    terminal: 41,
   },
   {
     number: 10,
@@ -98,6 +107,7 @@ export let store = [
     nustar: 14,
     aledo: 49,
     cado: 65,
+    terminal: 14,
   },
   {
     number: 11,
@@ -108,6 +118,7 @@ export let store = [
     nustar: 37,
     aledo: 14,
     cado: 78,
+    terminal: 35,
   },
   {
     number: 12,
@@ -118,6 +129,7 @@ export let store = [
     nustar: 82,
     aledo: 110,
     cado: 52,
+    terminal: 85,
   },
   {
     number: 13,
@@ -128,6 +140,7 @@ export let store = [
     nustar: 20,
     aledo: 52,
     cado: 51,
+    terminal: 22,
   },
   {
     number: 14,
@@ -138,6 +151,7 @@ export let store = [
     nustar: 19,
     aledo: 53,
     cado: 53,
+    terminal: 24,
   },
   {
     number: 15,
@@ -148,6 +162,7 @@ export let store = [
     nustar: 34,
     aledo: 51,
     cado: 56,
+    terminal: 23,
   },
   {
     number: 16,
@@ -158,6 +173,7 @@ export let store = [
     nustar: 35,
     aledo: 54,
     cado: 55,
+    terminal: 25,
   },
   {
     number: 17,
@@ -168,6 +184,7 @@ export let store = [
     nustar: 58,
     aledo: 44,
     cado: 96,
+    terminal: 56,
   },
   {
     number: 18,
@@ -178,6 +195,7 @@ export let store = [
     nustar: 25,
     aledo: 47,
     cado: 50,
+    terminal: 21,
   },
   {
     number: 19,
@@ -188,6 +206,7 @@ export let store = [
     nustar: 42,
     aledo: 70,
     cado: 79,
+    terminal: 43,
   },
   {
     number: 20,
@@ -198,16 +217,18 @@ export let store = [
     nustar: 44,
     aledo: 72,
     cado: 80,
+    terminal: 49,
   },
   {
     number: 21,
     city: "DALLAS",
-    address: " 1727 N HASKELL DALLAS,TX",
+    address: "1727 N HASKELL DALLAS,TX",
     magellan: 16,
     motiva: 16,
     nustar: 28,
     aledo: 53,
     cado: 42,
+    terminal: 27,
   },
   {
     number: 22,
@@ -218,6 +239,7 @@ export let store = [
     nustar: 23,
     aledo: 53,
     cado: 41,
+    terminal: 25,
   },
   {
     number: 23,
@@ -228,6 +250,7 @@ export let store = [
     nustar: 27,
     aledo: 59,
     cado: 43,
+    terminal: 29,
   },
   {
     number: 24,
@@ -238,6 +261,7 @@ export let store = [
     nustar: 25,
     aledo: 57,
     cado: 45,
+    terminal: 28,
   },
   {
     number: 25,
@@ -248,6 +272,7 @@ export let store = [
     nustar: 24,
     aledo: 45,
     cado: 50,
+    terminal: 19,
   },
   {
     number: 26,
@@ -258,6 +283,7 @@ export let store = [
     nustar: 27,
     aledo: 47,
     cado: 48,
+    terminal: 22,
   },
   {
     number: 27,
@@ -268,6 +294,7 @@ export let store = [
     nustar: 26,
     aledo: 58,
     cado: 48,
+    terminal: 28,
   },
   {
     number: 28,
@@ -278,6 +305,7 @@ export let store = [
     nustar: 23,
     aledo: 54,
     cado: 45,
+    terminal: 27,
   },
   {
     number: 29,
@@ -288,6 +316,7 @@ export let store = [
     nustar: 32,
     aledo: 54,
     cado: 36,
+    terminal: 29,
   },
   {
     number: 30,
@@ -298,6 +327,7 @@ export let store = [
     nustar: 23,
     aledo: 57,
     cado: 63,
+    terminal: 30,
   },
   {
     number: 31,
@@ -308,6 +338,7 @@ export let store = [
     nustar: 34,
     aledo: 56,
     cado: 43,
+    terminal: 35,
   },
   {
     number: 32,
@@ -318,6 +349,7 @@ export let store = [
     nustar: 28,
     aledo: 59,
     cado: 45,
+    terminal: 29,
   },
   {
     number: 33,
@@ -328,6 +360,7 @@ export let store = [
     nustar: 35,
     aledo: 58,
     cado: 42,
+    terminal: 36,
   },
   {
     number: 34,
@@ -338,6 +371,7 @@ export let store = [
     nustar: 36,
     aledo: 56,
     cado: 49,
+    terminal: 28,
   },
   {
     number: 35,
@@ -348,6 +382,7 @@ export let store = [
     nustar: 31,
     aledo: 61,
     cado: 39,
+    terminal: 32,
   },
   {
     number: 36,
@@ -358,6 +393,7 @@ export let store = [
     nustar: 32,
     aledo: 49,
     cado: 50,
+    terminal: 21,
   },
   {
     number: 37,
@@ -368,6 +404,7 @@ export let store = [
     nustar: 31,
     aledo: 50,
     cado: 56,
+    terminal: 21,
   },
   {
     number: 38,
@@ -378,6 +415,7 @@ export let store = [
     nustar: 13,
     aledo: 35,
     cado: 61,
+    terminal: 9,
   },
   {
     number: 39,
@@ -388,6 +426,7 @@ export let store = [
     nustar: 10,
     aledo: 35,
     cado: 60,
+    terminal: 8,
   },
   {
     number: 40,
@@ -398,6 +437,7 @@ export let store = [
     nustar: 11,
     aledo: 36,
     cado: 61,
+    terminal: 9,
   },
   {
     number: 41,
@@ -408,6 +448,7 @@ export let store = [
     nustar: 19,
     aledo: 52,
     cado: 63,
+    terminal: 26,
   },
   {
     number: 42,
@@ -418,6 +459,7 @@ export let store = [
     nustar: 17,
     aledo: 51,
     cado: 63,
+    terminal: 25,
   },
   {
     number: 43,
@@ -428,6 +470,7 @@ export let store = [
     nustar: 27,
     aledo: 33,
     cado: 81,
+    terminal: 31,
   },
   {
     number: 44,
@@ -438,6 +481,7 @@ export let store = [
     nustar: 23,
     aledo: 22,
     cado: 71,
+    terminal: 24,
   },
   {
     number: 45,
@@ -448,6 +492,7 @@ export let store = [
     nustar: 36,
     aledo: 18,
     cado: 76,
+    terminal: 38,
   },
   {
     number: 46,
@@ -458,6 +503,7 @@ export let store = [
     nustar: 23,
     aledo: 24,
     cado: 74,
+    terminal: 22,
   },
   {
     number: 47,
@@ -468,6 +514,7 @@ export let store = [
     nustar: 33,
     aledo: 66,
     cado: 58,
+    terminal: 39,
   },
   {
     number: 48,
@@ -478,6 +525,7 @@ export let store = [
     nustar: 32,
     aledo: 65,
     cado: 59,
+    terminal: 37,
   },
   {
     number: 49,
@@ -488,6 +536,7 @@ export let store = [
     nustar: 25,
     aledo: 58,
     cado: 52,
+    terminal: 31,
   },
   {
     number: 50,
@@ -498,6 +547,7 @@ export let store = [
     nustar: 24,
     aledo: 60,
     cado: 51,
+    terminal: 29,
   },
   {
     number: 51,
@@ -508,6 +558,7 @@ export let store = [
     nustar: 63,
     aledo: 79,
     cado: 93,
+    terminal: 66,
   },
   {
     number: 52,
@@ -518,6 +569,7 @@ export let store = [
     nustar: 26,
     aledo: 39,
     cado: 65,
+    terminal: 18,
   },
   {
     number: 53,
@@ -528,6 +580,7 @@ export let store = [
     nustar: 28,
     aledo: 45,
     cado: 61,
+    terminal: 18,
   },
   {
     number: 54,
@@ -538,6 +591,7 @@ export let store = [
     nustar: 26,
     aledo: 42,
     cado: 63,
+    terminal: 18,
   },
   {
     number: 55,
@@ -548,6 +602,7 @@ export let store = [
     nustar: 21,
     aledo: 37,
     cado: 54,
+    terminal: 11,
   },
   {
     number: 56,
@@ -558,6 +613,7 @@ export let store = [
     nustar: 25,
     aledo: 37,
     cado: 56,
+    terminal: 14,
   },
   {
     number: 57,
@@ -568,6 +624,7 @@ export let store = [
     nustar: 24,
     aledo: 37,
     cado: 59,
+    terminal: 13,
   },
   {
     number: 58,
@@ -578,6 +635,7 @@ export let store = [
     nustar: 25,
     aledo: 42,
     cado: 56,
+    terminal: 14,
   },
   {
     number: 59,
@@ -588,6 +646,7 @@ export let store = [
     nustar: 78,
     aledo: 114,
     cado: 12,
+    terminal: 78,
   },
   {
     number: 60,
@@ -598,6 +657,7 @@ export let store = [
     nustar: 26,
     aledo: 29,
     cado: 75,
+    terminal: 23,
   },
   {
     number: 61,
@@ -608,6 +668,7 @@ export let store = [
     nustar: 21,
     aledo: 44,
     cado: 56,
+    terminal: 11,
   },
   {
     number: 62,
@@ -618,6 +679,7 @@ export let store = [
     nustar: 16,
     aledo: 40,
     cado: 59,
+    terminal: 7,
   },
   {
     number: 63,
@@ -628,6 +690,7 @@ export let store = [
     nustar: 12,
     aledo: 43,
     cado: 54,
+    terminal: 12,
   },
   {
     number: 64,
@@ -638,6 +701,7 @@ export let store = [
     nustar: 12,
     aledo: 43,
     cado: 54,
+    terminal: 12,
   },
   {
     number: 65,
@@ -648,6 +712,7 @@ export let store = [
     nustar: 15,
     aledo: 39,
     cado: 55,
+    terminal: 7,
   },
   {
     number: 66,
@@ -658,6 +723,7 @@ export let store = [
     nustar: 15,
     aledo: 47,
     cado: 55,
+    terminal: 15,
   },
   {
     number: 67,
@@ -668,6 +734,7 @@ export let store = [
     nustar: 51,
     aledo: 37,
     cado: 92,
+    terminal: 49,
   },
   {
     number: 68,
@@ -678,6 +745,7 @@ export let store = [
     nustar: 57,
     aledo: 86,
     cado: 50,
+    terminal: 52,
   },
   {
     number: 69,
@@ -688,6 +756,7 @@ export let store = [
     nustar: 42,
     aledo: 63,
     cado: 51,
+    terminal: 35,
   },
   {
     number: 70,
@@ -698,6 +767,7 @@ export let store = [
     nustar: 36,
     aledo: 69,
     cado: 62,
+    terminal: 39,
   },
   {
     number: 71,
@@ -708,6 +778,7 @@ export let store = [
     nustar: 41,
     aledo: 74,
     cado: 72,
+    terminal: 46,
   },
   {
     number: 72,
@@ -718,6 +789,7 @@ export let store = [
     nustar: 33,
     aledo: 66,
     cado: 56,
+    terminal: 40,
   },
   {
     number: 73,
@@ -728,6 +800,7 @@ export let store = [
     nustar: 34,
     aledo: 68,
     cado: 46,
+    terminal: 40,
   },
   {
     number: 74,
@@ -738,6 +811,7 @@ export let store = [
     nustar: 35,
     aledo: 69,
     cado: 46,
+    terminal: 40,
   },
   {
     number: 75,
@@ -748,6 +822,7 @@ export let store = [
     nustar: 41,
     aledo: 75,
     cado: 48,
+    terminal: 47,
   },
   {
     number: 76,
@@ -758,6 +833,7 @@ export let store = [
     nustar: 32,
     aledo: 65,
     cado: 52,
+    terminal: 37,
   },
   {
     number: 77,
@@ -768,6 +844,7 @@ export let store = [
     nustar: 41,
     aledo: 74,
     cado: 50,
+    terminal: 45,
   },
   {
     number: 78,
@@ -778,6 +855,7 @@ export let store = [
     nustar: 39,
     aledo: 74,
     cado: 38,
+    terminal: 46,
   },
   {
     number: 79,
@@ -788,6 +866,7 @@ export let store = [
     nustar: 43,
     aledo: 78,
     cado: 47,
+    terminal: 48,
   },
   {
     number: 80,
@@ -798,6 +877,7 @@ export let store = [
     nustar: 40,
     aledo: 62,
     cado: 33,
+    terminal: 37,
   },
   {
     number: 81,
@@ -808,6 +888,7 @@ export let store = [
     nustar: 36,
     aledo: 62,
     cado: 32,
+    terminal: 37,
   },
   {
     number: 82,
@@ -818,6 +899,7 @@ export let store = [
     nustar: 43,
     aledo: 64,
     cado: 37,
+    terminal: 41,
   },
   {
     number: 83,
@@ -828,6 +910,7 @@ export let store = [
     nustar: 43,
     aledo: 64,
     cado: 36,
+    terminal: 39,
   },
   {
     number: 84,
@@ -838,6 +921,7 @@ export let store = [
     nustar: 38,
     aledo: 60,
     cado: 34,
+    terminal: 34,
   },
   {
     number: 85,
@@ -848,6 +932,7 @@ export let store = [
     nustar: 20,
     aledo: 32,
     cado: 74,
+    terminal: 23,
   },
   {
     number: 86,
@@ -858,6 +943,7 @@ export let store = [
     nustar: 17,
     aledo: 32,
     cado: 71,
+    terminal: 20,
   },
   {
     number: 87,
@@ -868,6 +954,7 @@ export let store = [
     nustar: 20,
     aledo: 37,
     cado: 78,
+    terminal: 32,
   },
   {
     number: 88,
@@ -878,6 +965,7 @@ export let store = [
     nustar: 32,
     aledo: 65,
     cado: 51,
+    terminal: 37,
   },
   {
     number: 89,
@@ -888,6 +976,7 @@ export let store = [
     nustar: 33,
     aledo: 64,
     cado: 45,
+    terminal: 34,
   },
   {
     number: 90,
@@ -898,6 +987,7 @@ export let store = [
     nustar: 21,
     aledo: 54,
     cado: 51,
+    terminal: 26,
   },
   {
     number: 91,
@@ -908,6 +998,7 @@ export let store = [
     nustar: 34,
     aledo: 66,
     cado: 46,
+    terminal: 35,
   },
   {
     number: 92,
@@ -918,6 +1009,7 @@ export let store = [
     nustar: 36,
     aledo: 69,
     cado: 56,
+    terminal: 38,
   },
   {
     number: 93,
@@ -928,6 +1020,7 @@ export let store = [
     nustar: 77,
     aledo: 114,
     cado: 23,
+    terminal: 79,
   },
   {
     number: 94,
@@ -938,6 +1031,7 @@ export let store = [
     nustar: 28,
     aledo: 58,
     cado: 43,
+    terminal: 27,
   },
   {
     number: 95,
@@ -948,6 +1042,7 @@ export let store = [
     nustar: 30,
     aledo: 59,
     cado: 44,
+    terminal: 29,
   },
   {
     number: 96,
@@ -958,6 +1053,7 @@ export let store = [
     nustar: 13,
     aledo: 40,
     cado: 67,
+    terminal: 29,
   },
   {
     number: 97,
@@ -968,6 +1064,7 @@ export let store = [
     nustar: 44,
     aledo: 67,
     cado: 25,
+    terminal: 43,
   },
   {
     number: 98,
@@ -978,6 +1075,7 @@ export let store = [
     nustar: 43,
     aledo: 67,
     cado: 25,
+    terminal: 43,
   },
   {
     number: 99,
@@ -988,6 +1086,7 @@ export let store = [
     nustar: 42,
     aledo: 70,
     cado: 30,
+    terminal: 42,
   },
   {
     number: 100,
@@ -998,6 +1097,7 @@ export let store = [
     nustar: 39,
     aledo: 69,
     cado: 29,
+    terminal: 38,
   },
   {
     number: 101,
@@ -1008,6 +1108,7 @@ export let store = [
     nustar: 56,
     aledo: 80,
     cado: 13,
+    terminal: 57,
   },
   {
     number: 102,
@@ -1018,6 +1119,7 @@ export let store = [
     nustar: 31,
     aledo: 28,
     cado: 81,
+    terminal: 29,
   },
   {
     number: 103,
@@ -1028,6 +1130,7 @@ export let store = [
     nustar: 27,
     aledo: 23,
     cado: 78,
+    terminal: 25,
   },
   {
     number: 104,
@@ -1038,6 +1141,7 @@ export let store = [
     nustar: 46,
     aledo: 72,
     cado: 46,
+    terminal: 41,
   },
   {
     number: 105,
@@ -1048,6 +1152,7 @@ export let store = [
     nustar: 62,
     aledo: 94,
     cado: 37,
+    terminal: 57,
   },
   {
     number: 106,
@@ -1058,6 +1163,7 @@ export let store = [
     nustar: 62,
     aledo: 94,
     cado: 37,
+    terminal: 57,
   },
   {
     number: 107,
@@ -1068,6 +1174,7 @@ export let store = [
     nustar: 21,
     aledo: 55,
     cado: 56,
+    terminal: 28,
   },
   {
     number: 108,
@@ -1078,6 +1185,7 @@ export let store = [
     nustar: 21,
     aledo: 55,
     cado: 54,
+    terminal: 28,
   },
   {
     number: 109,
@@ -1088,6 +1196,7 @@ export let store = [
     nustar: 25,
     aledo: 59,
     cado: 59,
+    terminal: 31,
   },
   {
     number: 110,
@@ -1098,6 +1207,7 @@ export let store = [
     nustar: 47,
     aledo: 57,
     cado: 65,
+    terminal: 39,
   },
   {
     number: 111,
@@ -1108,6 +1218,7 @@ export let store = [
     nustar: 50,
     aledo: 13,
     cado: 94,
+    terminal: 49,
   },
 ];
 export let loadSite = [

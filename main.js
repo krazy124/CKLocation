@@ -44,21 +44,31 @@ for (var i = 0; i < 4; i++) {
 }
 
 function calcDriveTime() {
+  let driveTime = "";
   let load = document.getElementById("loadDisplay");
+  if (load0.value == 1) {
+    driveTime = store[drop0.value].terminal;
+    load.innerHTML = driveTime;
+  }
   if (load0.value == 2) {
-    load.innerHTML = store[drop0.value].magellan;
+    driveTime += loadSite[load0.value].toTerminal + store[drop0.value].magellan;
+    load.innerHTML = driveTime;
   }
   if (load0.value == 3) {
-    load.innerHTML = store[drop0.value].motiva;
+    driveTime += loadSite[load0.value].toTerminal + store[drop0.value].motiva;
+    load.innerHTML = driveTime;
   }
   if (load0.value == 4) {
-    load.innerHTML = store[drop0.value].nustar;
+    driveTime += loadSite[load0.value].toTerminal + store[drop0.value].nustar;
+    load.innerHTML = driveTime;
   }
   if (load0.value == 5) {
-    load.innerHTML = store[drop0.value].aledo;
+    driveTime += loadSite[load0.value].toTerminal + store[drop0.value].aledo;
+    load.innerHTML = driveTime;
   }
   if (load0.value == 6) {
-    load.innerHTML = store[drop0.value].cado;
+    driveTime += loadSite[load0.value].toTerminal + store[drop0.value].cado;
+    load.innerHTML = driveTime;
   }
 }
 
