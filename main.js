@@ -1,4 +1,4 @@
-import { store, loadSite } from "./location.js";
+import { store, loadSite, jobs } from "./location.js";
 
 function addDropLocation(i) {
   let newSelect = document.createElement("select");
@@ -43,43 +43,67 @@ for (var i = 0; i < 4; i++) {
   document.getElementById("dayDiv").innerHTML += "<br>";
 }
 
-function calcDriveTime(dropNum, loadNum, display) {
-  let cat = display;
-  let loadValue = loadNum;
-  let dropValue = dropNum;
+function calcDriveTime(dropLocationNum, loadLocationNum, display, tripNum) {
   let driveTime = "";
-  let load = document.getElementById(cat);
-  if (loadValue == 1) {
-    driveTime = store[dropValue].terminal;
+  let load = document.getElementById(display);
+  if (loadLocationNum == 1) {
+    driveTime = store[dropLocationNum].terminal;
     load.innerHTML = driveTime;
+    jobs[tripNum].timeToLoadsite = 0;
+    jobs[tripNum + 1].fromNumber = store[dropLocationNum].number;
   }
-  if (loadValue == 2) {
-    driveTime += loadSite[loadValue].toTerminal + store[dropValue].magellan;
+  if (loadLocationNum == 2) {
+    driveTime +=
+      loadSite[loadLocationNum].toTerminal + store[dropLocationNum].magellan;
     load.innerHTML = driveTime;
+    jobs[tripNum].timeToLoadsite = loadSite[loadLocationNum].toTerminal;
+    jobs[tripNum].timeToDropsite = store[dropLocationNum].magellan;
+    jobs[tripNum + 1].fromNumber = store[dropLocationNum].number;
   }
-  if (loadValue == 3) {
-    driveTime += loadSite[loadValue].toTerminal + store[dropValue].motiva;
+  if (loadLocationNum == 3) {
+    driveTime +=
+      loadSite[loadLocationNum].toTerminal + store[dropLocationNum].motiva;
     load.innerHTML = driveTime;
+    jobs[tripNum].timeToLoadsite = 0;
+    jobs[tripNum].timeToLoadsite = loadSite[loadLocationNum].toTerminal;
+    jobs[tripNum].timeToDropsite = store[dropLocationNum].motiva;
+    jobs[tripNum + 1].fromNumber = store[dropLocationNum].number;
   }
-  if (loadValue == 4) {
-    driveTime += loadSite[loadValue].toTerminal + store[dropValue].nustar;
+  if (loadLocationNum == 4) {
+    driveTime +=
+      loadSite[loadLocationNum].toTerminal + store[dropLocationNum].nustar;
     load.innerHTML = driveTime;
+    jobs[tripNum].timeToLoadsite = 0;
+    jobs[tripNum].timeToLoadsite = loadSite[loadLocationNum].toTerminal;
+    jobs[tripNum].timeToDropsite = store[dropLocationNum].nustar;
+    jobs[tripNum + 1].fromNumber = store[dropLocationNum].number;
   }
-  if (loadValue == 5) {
-    driveTime += loadSite[loadValue].toTerminal + store[dropValue].aledo;
+  if (loadLocationNum == 5) {
+    driveTime +=
+      loadSite[loadLocationNum].toTerminal + store[dropLocationNum].aledo;
     load.innerHTML = driveTime;
+    jobs[tripNum].timeToLoadsite = loadSite[loadLocationNum].toTerminal;
+    jobs[tripNum].timeToDropsite = store[dropLocationNum].aledo;
+    jobs[tripNum + 1].fromNumber = store[dropLocationNum].number;
   }
-  if (loadValue == 6) {
-    driveTime += loadSite[loadValue].toTerminal + store[dropValue].cado;
+  if (loadLocationNum == 6) {
+    driveTime +=
+      loadSite[loadLocationNum].toTerminal + store[dropLocationNum].cado;
     load.innerHTML = driveTime;
+    jobs[tripNum].timeToLoadsite = loadSite[loadLocationNum].toTerminal;
+    jobs[tripNum].timeToDropsite = store[dropLocationNum].cado;
   }
 }
 
 function callDrive() {
-  calcDriveTime(drop0.value, load0.value, "load0Display");
-  calcDriveTime(drop1.value, load1.value, "load1Display");
-  calcDriveTime(drop2.value, load2.value, "load2Display");
-  calcDriveTime(drop3.value, load3.value, "load3Display");
+  calcDriveTime(drop0.value, load0.value, "load0Display", 0);
+  calcDriveTime(drop1.value, load1.value, "load1Display", 1);
+  calcDriveTime(drop2.value, load2.value, "load2Display", 2);
+  calcDriveTime(drop3.value, load3.value, "load3Display", 3);
+  console.log(jobs[0]);
+  console.log(jobs[1]);
+  console.log(jobs[2]);
+  console.log(jobs[3]);
 }
 
 document.getElementById("goButton").addEventListener("click", callDrive);

@@ -1,3 +1,46 @@
+export let jobs = [
+  {
+    number: 0,
+    timeToLoadsite: 1,
+    loadTime: 1,
+    timeToDropsite: 1,
+    dropTime: 1,
+    fromNumber: "",
+  },
+  {
+    number: 1,
+    timeToLoadsite: 2,
+    loadTime: 30,
+    timeToDropsite: 30,
+    dropTime: 45,
+    fromNumber: "",
+  },
+  {
+    number: 2,
+    timeToLoadsite: 3,
+    loadTime: 30,
+    timeToDropsite: 30,
+    dropTime: 45,
+    fromNumber: "",
+  },
+  {
+    number: 3,
+    timeToLoadsite: 4,
+    loadTime: 30,
+    timeToDropsite: 30,
+    dropTime: 45,
+    fromNumber: "",
+  },
+  {
+    number: 4,
+    timeToLoadsite: 4,
+    loadTime: 30,
+    timeToDropsite: 30,
+    dropTime: 45,
+    fromNumber: "",
+  },
+];
+
 export let store = [
   {
     number: 1,
@@ -1224,44 +1267,44 @@ export let store = [
 export let loadSite = [
   {
     number: 112,
+    facility: "Terminal (Preloaded) ",
+    address: "3485 ROY ORR BLVD, GRAND PRAIRIE, TX",
+    toTerminal: 0,
+    value: 1,
+  },
+  {
+    number: 113,
     facility: "MAGELLAN",
     address: " 4200 SINGLETON BLVD, DALLAS, TX",
     toTerminal: 20,
     value: 2,
   },
   {
-    number: 113,
+    number: 114,
     facility: "MOTIVA",
     address: " 3900 SINGLETON BLVD, DALLAS, TX ",
     toTerminal: 20,
     value: 3,
   },
   {
-    number: 114,
+    number: 115,
     facility: "NUSTAR",
     address: " 1700 MUSTANG CT, SOUTHLAKE, TX ",
     toTerminal: 19,
     value: 4,
   },
   {
-    number: 115,
+    number: 116,
     facility: "ALEDO",
     address: " 6000, I-20, ALEDO, TX",
     toTerminal: 39,
     value: 5,
   },
   {
-    number: 116,
+    number: 117,
     facility: "Cado Mills",
     address: " 2738 CO RD 2168, CADDO MILLS, TX",
     toTerminal: 65,
     value: 6,
-  },
-  {
-    number: 117,
-    facility: "Terminal (Preloaded) ",
-    address: "3485 ROY ORR BLVD, GRAND PRAIRIE, TX",
-    toTerminal: 0,
-    value: 1,
   },
 ];
