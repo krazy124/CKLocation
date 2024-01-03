@@ -43,33 +43,43 @@ for (var i = 0; i < 4; i++) {
   document.getElementById("dayDiv").innerHTML += "<br>";
 }
 
-function calcDriveTime() {
+function calcDriveTime(dropNum, loadNum, display) {
+  let cat = display;
+  let loadValue = loadNum;
+  let dropValue = dropNum;
   let driveTime = "";
-  let load = document.getElementById("loadDisplay");
-  if (load0.value == 1) {
-    driveTime = store[drop0.value].terminal;
+  let load = document.getElementById(cat);
+  if (loadValue == 1) {
+    driveTime = store[dropValue].terminal;
     load.innerHTML = driveTime;
   }
-  if (load0.value == 2) {
-    driveTime += loadSite[load0.value].toTerminal + store[drop0.value].magellan;
+  if (loadValue == 2) {
+    driveTime += loadSite[loadValue].toTerminal + store[dropValue].magellan;
     load.innerHTML = driveTime;
   }
-  if (load0.value == 3) {
-    driveTime += loadSite[load0.value].toTerminal + store[drop0.value].motiva;
+  if (loadValue == 3) {
+    driveTime += loadSite[loadValue].toTerminal + store[dropValue].motiva;
     load.innerHTML = driveTime;
   }
-  if (load0.value == 4) {
-    driveTime += loadSite[load0.value].toTerminal + store[drop0.value].nustar;
+  if (loadValue == 4) {
+    driveTime += loadSite[loadValue].toTerminal + store[dropValue].nustar;
     load.innerHTML = driveTime;
   }
-  if (load0.value == 5) {
-    driveTime += loadSite[load0.value].toTerminal + store[drop0.value].aledo;
+  if (loadValue == 5) {
+    driveTime += loadSite[loadValue].toTerminal + store[dropValue].aledo;
     load.innerHTML = driveTime;
   }
-  if (load0.value == 6) {
-    driveTime += loadSite[load0.value].toTerminal + store[drop0.value].cado;
+  if (loadValue == 6) {
+    driveTime += loadSite[loadValue].toTerminal + store[dropValue].cado;
     load.innerHTML = driveTime;
   }
 }
 
-document.getElementById("cat").addEventListener("click", calcDriveTime);
+function callDrive() {
+  calcDriveTime(drop0.value, load0.value, "load0Display");
+  calcDriveTime(drop1.value, load1.value, "load1Display");
+  calcDriveTime(drop2.value, load2.value, "load2Display");
+  calcDriveTime(drop3.value, load3.value, "load3Display");
+}
+
+document.getElementById("cat").addEventListener("click", callDrive);
