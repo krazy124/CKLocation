@@ -82,4 +82,4 @@ function callDrive() {
   calcDriveTime(drop3.value, load3.value, "load3Display");
 }
 
-document.getElementById("cat").addEventListener("click", callDrive);
+document.getElementById("goButton").addEventListener("click", callDrive);
