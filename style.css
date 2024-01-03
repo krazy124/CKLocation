@@ -1,12 +1,11 @@
 .all {
-    background: #BBE5FF;
-    height: 2000px;
+  background: #bbe5ff;
+  height: 2000px;
 }
 
-
-#dayDiv{
-  background: #BBE5FF;
+#dayDiv {
+  background: #bbe5ff;
   display: grid;
-  width:90%;
+  width: 90%;
   margin: auto;
 }
