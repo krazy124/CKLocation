@@ -35,7 +35,8 @@ function addLoadSite(i) {
     opt.innerHTML = loadSite[i].facility + "-" + loadSite[i].address;
     newSelect.appendChild(opt);
   }
-  document.getElementById("dayDiv").appendChild(newSelect);
+  let dayDiv = document.getElementById("dayDiv");
+  dayDiv.appendChild(newSelect);
 }
 for (var i = 0; i < 4; i++) {
   addLoadSite(i);
@@ -49,8 +50,9 @@ function calcDriveTime(dropLocationNum, loadLocationNum, display, tripNum) {
   if (loadLocationNum == 1) {
     driveTime = store[dropLocationNum].terminal;
     load.innerHTML = driveTime;
-    jobs[tripNum].timeToLoadsite = 0;
     jobs[tripNum + 1].fromNumber = store[dropLocationNum].number;
+    /*let nextSiteLocation = ;
+    jobs[tripNum+1].timeToLoadsite = store[fromNumber-1].;*/
   }
   if (loadLocationNum == 2) {
     driveTime +=

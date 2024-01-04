@@ -6,6 +6,7 @@ export let jobs = [
     timeToDropsite: 1,
     dropTime: 1,
     fromNumber: "",
+    nextLocationNumber: "",
   },
   {
     number: 1,
@@ -14,6 +15,7 @@ export let jobs = [
     timeToDropsite: 30,
     dropTime: 45,
     fromNumber: "",
+    nextLocationNumber: "",
   },
   {
     number: 2,
@@ -22,6 +24,7 @@ export let jobs = [
     timeToDropsite: 30,
     dropTime: 45,
     fromNumber: "",
+    nextLocationNumber: "",
   },
   {
     number: 3,
@@ -30,6 +33,7 @@ export let jobs = [
     timeToDropsite: 30,
     dropTime: 45,
     fromNumber: "",
+    nextLocationNumber: "",
   },
   {
     number: 4,
@@ -38,6 +42,7 @@ export let jobs = [
     timeToDropsite: 30,
     dropTime: 45,
     fromNumber: "",
+    nextLocationNumber: "",
   },
 ];
 
