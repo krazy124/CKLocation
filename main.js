@@ -48,75 +48,24 @@ for (var i = 0; i < 4; i++) {
   document.getElementById("dayDiv").innerHTML += "<br>";
 }
 
-function calcDriveTime(dropLocationNum, loadLocationNum, display, tripNum) {
-  //function calcDriveTime(dropLocationNum, loadLocationNum, display, tripNum) {
 
 
 
-  /*if (loadLocationNum == 1) {
-      fromNumber
-      startToLoadTime
-      loadTime
-      loadToDropTime
-      dropTime
-      nextLocationNumber
-   */
-   
-    /*let nextSiteLocation = ;
-    jobs[tripNum+1].timeToLoadsite = store[fromNumber-1].;*//*
-  }
-  if (loadLocationNum == 2) {
-    driveTime +=
-      loadSite[loadLocationNum].toTerminal + store[dropLocationNum].magellan;
-    load.innerHTML = driveTime;
-    jobs[tripNum].timeToLoadsite = loadSite[loadLocationNum].toTerminal;
-    jobs[tripNum].timeToDropsite = store[dropLocationNum].magellan;
-    jobs[tripNum + 1].fromNumber = store[dropLocationNum].number;
-  }
-  if (loadLocationNum == 3) {
-    driveTime +=
-      loadSite[loadLocationNum].toTerminal + store[dropLocationNum].motiva;
-    load.innerHTML = driveTime;
-    jobs[tripNum].timeToLoadsite = 0;
-    jobs[tripNum].timeToLoadsite = loadSite[loadLocationNum].toTerminal;
-    jobs[tripNum].timeToDropsite = store[dropLocationNum].motiva;
-    jobs[tripNum + 1].fromNumber = store[dropLocationNum].number;
-  }
-  if (loadLocationNum == 4) {
-    driveTime +=
-      loadSite[loadLocationNum].toTerminal + store[dropLocationNum].nustar;
-    load.innerHTML = driveTime;
-    jobs[tripNum].timeToLoadsite = 0;
-    jobs[tripNum].timeToLoadsite = loadSite[loadLocationNum].toTerminal;
-    jobs[tripNum].timeToDropsite = store[dropLocationNum].nustar;
-    jobs[tripNum + 1].fromNumber = store[dropLocationNum].number;
-  }
-  if (loadLocationNum == 5) {
-    driveTime +=
-      loadSite[loadLocationNum].toTerminal + store[dropLocationNum].aledo;
-    load.innerHTML = driveTime;
-    jobs[tripNum].timeToLoadsite = loadSite[loadLocationNum].toTerminal;
-    jobs[tripNum].timeToDropsite = store[dropLocationNum].aledo;
-    jobs[tripNum + 1].fromNumber = store[dropLocationNum].number;
-  }
-  if (loadLocationNum == 6) {
-    driveTime +=
-      loadSite[loadLocationNum].toTerminal + store[dropLocationNum].cado;
-    load.innerHTML = driveTime;
-    jobs[tripNum].timeToLoadsite = loadSite[loadLocationNum].toTerminal;
-    jobs[tripNum].timeToDropsite = store[dropLocationNum].cado;
-  }*/
+function calcAgenda(jobNum) {
+  document.getElementById('');
 }
 
-function callDrive() {
-  calcDriveTime(dropLocation0.value, loadLocation0.value, "load0Display", 0);
-  calcDriveTime(dropLocation1.value, loadLocation1.value, "load1Display", 1);
-  calcDriveTime(dropLocation2.value, loadLocation2.value, "load2Display", 2);
-  calcDriveTime(dropLocation23.value, loadLocation3.value, "load3Display", 3);
+
+
+
+/*function callDrive() {
+  calcDriveTime(1);
+  calcDriveTime(2);
+  calcDriveTi
   console.log(jobs[0]);
   console.log(jobs[1]);
   console.log(jobs[2]);
   console.log(jobs[3]);
-}
+}*/
 
-document.getElementById("goButton").addEventListener("click", callDrive);
+document.getElementById("goButton").addEventListener("click", ()=>{calcAgenda(0);});
