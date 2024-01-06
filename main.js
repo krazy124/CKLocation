@@ -40,7 +40,7 @@ function addLoadSite(i) {
   }
   let dayDiv = document.getElementById("dayDiv");
   dayDiv.appendChild(newSelect);
-};
+}
 
 for (var i = 0; i < 4; i++) {
   addLoadSite(i);
@@ -48,24 +48,29 @@ for (var i = 0; i < 4; i++) {
   document.getElementById("dayDiv").innerHTML += "<br>";
 }
 
-
-
-
-function calcAgenda(jobNum) {
-  document.getElementById('');
-}
-
-
-
-
-/*function callDrive() {
-  calcDriveTime(1);
-  calcDriveTime(2);
-  calcDriveTi
+function saveLocations(jobNum) {
+  let loadIt0 = document.getElementById("loadLocation0");
+  let loadIt1 = document.getElementById("loadLocation1");
+  let loadIt2 = document.getElementById("loadLocation2");
+  let loadIt3 = document.getElementById("loadLocation3");
+  let dropIt0 = document.getElementById("dropLocation0");
+  let dropIt1 = document.getElementById("dropLocation1");
+  let dropIt2 = document.getElementById("dropLocation2");
+  let dropIt3 = document.getElementById("dropLocation3");
+  jobs[0].loadSite = parseInt(loadIt0.value);
+  jobs[0].dropSite = parseInt(dropIt0.value);
+  jobs[1].loadSite = parseInt(loadIt1.value);
+  jobs[1].dropSite = parseInt(dropIt1.value);
+  jobs[2].loadSite = parseInt(loadIt2.value);
+  jobs[2].dropSite = parseInt(dropIt2.value);
+  jobs[3].loadSite = parseInt(loadIt3.value);
+  jobs[3].dropSite = parseInt(dropIt3.value);
   console.log(jobs[0]);
   console.log(jobs[1]);
   console.log(jobs[2]);
   console.log(jobs[3]);
-}*/
+}
 
-document.getElementById("goButton").addEventListener("click", ()=>{calcAgenda(0);});
+document.getElementById("goButton").addEventListener("click", () => {
+  saveLocations(0);
+});
