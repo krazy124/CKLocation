@@ -1,6 +1,6 @@
 .all {
   background: #bbe5ff;
-  height: 2000px;
+  padding-bottom: 15px;
 }
 
 #dayDiv {
@@ -8,4 +8,56 @@
   display: grid;
   width: 90%;
   margin: auto;
+}
+
+#dayAgenda {
+  display:grid;
+  width: 90%;
+  margin:auto;
+  background:#EDEFFF;
+  grid-template-columns: 60% 20% 20%;
+}
+
+.timeaddEntry {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 6fr;
+  grid-template-rows: 20px 20px;
+  grid-template-areas:
+    "leftSide middleTop rightSide"
+    "leftSide middleLower rightSide";
+  margin: 15px;
+}
+.leftSide {
+  grid-area: leftSide;
+  background-color: red;
+  margin: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.middleTop {
+  grid-area: middleTop;
+  background-color: blue;
+  margin: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.middleLower {
+  grid-area: middleLower;
+  background-color: green;
+  margin: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.rightSide {
+  grid-area: rightSide;
+  background-color: purple;
+  margin: 1px;
+  border-radius: 5px;
+  padding-left: 5px;
 }
