@@ -1,0 +1,4 @@
+1 make all selects and give them options and display them in html
+2 user makes selctions and hits go button
+3 options are stored in jobs[] array
+4 
