@@ -1,21 +1,23 @@
-import {jobs} from "./location.js";
+import { jobs, store } from "./location.js";
 
-function milli(min) {return min * 60 * 1000;}
+function milli(min) {
+  return min * 60 * 1000;
+}
 
-
-/*export let obj1 = [{
-     eventType: "Pretrip",
-     duration: jobs[0].pretrip,
-     begin: jobs[0].startTime,
-     end: new Date(jobs[0].startTime.getTime() + milli(jobs[0].pretrip)),
-     location: store[jobs[0].startLocation].address
+export let obj1 = [
+  {
+    eventType: "Pretrip",
+    duration: jobs[0].pretrip,
+    begin: jobs[0].startTime,
+    end: new Date(jobs[0].startTime.getTime() + milli(jobs[0].pretrip)),
+    location: store[jobs[0].startLocation].address,
   },
-   {
-     eventType: "Travel",
-     duration: jobs[0].startToLoadTime,
-     begin: new Date(jobs[0].startTime.getTime() + milli(jobs[0].pretrip)),
-     end: new Date(obj1[1].begin.getTime() + milli(jobs[0].startToLoadTime)),
-     location: "Driving"
+  {
+    eventType: "Travel",
+    duration: jobs[0].startToLoadTime,
+    begin: new Date(jobs[0].startTime.getTime() + milli(jobs[0].pretrip)),
+    end: new Date(obj1[1].begin.getTime() + milli(jobs[0].startToLoadTime)),
+    location: "Driving",
   },
   /* {
      eventType: "Load",
@@ -128,10 +130,10 @@ function milli(min) {return min * 60 * 1000;}
      begin: new Date(obj16.end.getTime() + milli(jobs[3].loadToDropTime)),
      end: new Date(obj17.end.getTime() + milli(store[jobs[3].dropSite].numberToTerminal)),
      location: jobs[3].dropSite
-  }
-  ];//end drive*/
+  }*/
+]; //end drive
 
- /*console.log(obj3.eventType);
+/*console.log(obj3.eventType);
  console.log(obj3.duration);
  console.log(f.format(obj3.begin));
  console.log(f.format(obj3.end));

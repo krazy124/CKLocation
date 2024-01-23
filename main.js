@@ -1,5 +1,5 @@
 import { store, loadSite, jobs } from "./location.js";
-//import { obj1 } from "./playzone.js";
+import { obj1 } from "./playzone.js";
 
 //Start Section these 2 functions add all selects and add the options to those selects which includes all the load locations and stores. These 2 functions start as soo as the page opens------------------------------------
 function addDropLocation(i) {
@@ -131,9 +131,9 @@ function numberToTerminal(jobNum) {
     jobs[jobNum].startToLoadTime = store[jobs[jobNum].startLocation].motiva;
   } else if (jobs[jobNum].loadSite == 3) {
     jobs[jobNum].startToLoadTime = store[jobs[jobNum].startLocation].nustar;
-  } else if (jobs[jobNum].loadSite = 4) {
+  } else if ((jobs[jobNum].loadSite = 4)) {
     jobs[jobNum].startToLoadTime = store[jobs[jobNum].startLocation].aledo;
-  } else if (jobs[jobNum].loadSite = 5) {
+  } else if ((jobs[jobNum].loadSite = 5)) {
     jobs[jobNum].startToLoadTime = store[jobs[jobNum].startLocation].caddo;
   }
 }
@@ -164,16 +164,22 @@ function makeA() {
   function addTime(time, add) {
     return time.getTime() + add;
   }
+  function milli(min) {
+    return min * 60 * 1000;
+  }
 
   function makeDate(minute) {
     return new Date(startTime.getTime() + milli(minute));
   }
- 
-  // 
+
+  //
   //A's-----
   agenda[1] = startTime; //start pretrip
   agenda[2] = 25; //duration
-  agenda[3] = new Date(agenda[1].getTime() + milli(agenda[2]), store[jobs[0].startLocation].address); //End pretrip
+  agenda[3] = new Date(
+    agenda[1].getTime() + milli(agenda[2]),
+    store[jobs[0].startLocation].address
+  ); //End pretrip
   agenda[4] = store[jobs[0].startLocation].address; //End pretrip
 
   agenda[5] = jobs[0].startToLoadTime; //duration
@@ -242,7 +248,6 @@ function makeA() {
   agenda[52] = agenda[51];
   //addDiv(obj1[0],obj1[1],obj1[2],obj1[3],obj1[4]);
   //cat.appendChild(subEntry2);
-
 }
 
 //Creates a new timeblock in the agneda and outputs it on the bottom of the screen

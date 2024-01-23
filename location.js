@@ -1,7 +1,7 @@
 export let jobs = [
   {
     number: 0,
-    startTime: new Date(2024,0,1,3,0,0,0),
+    startTime: new Date(2024, 0, 1, 3, 0, 0, 0),
     pretrip: 25,
     startLocation: 111,
     startAddress: "3485 ROY ORR BLVD, GRAND PRAIRIE, TX",
@@ -11,12 +11,12 @@ export let jobs = [
     loadToDropTime: "",
     dropSite: "",
     dropTime: 60,
-    endTime:"",
+    endTime: new Date(2024, 0, 0, 3, 0, 0, 0),
     nextLocationNumber: "",
   },
   {
     number: 1,
-    startTime:jobs[0].endTime,
+    startTime: "",
     startLocation: "",
     startAddress: "",
     startToLoadTime: "",
@@ -25,12 +25,12 @@ export let jobs = [
     loadToDropTime: "",
     dropSite: "",
     dropTime: 60,
-    endTime:"",
+    endTime: new Date(2024, 0, 0, 3, 0, 0, 0),
     nextLocationNumber: "",
   },
   {
     number: 2,
-    startTime:jobs[1].endTime,
+    startTime: "",
     startLocation: "",
     startAddress: "",
     startToLoadTime: "",
@@ -39,12 +39,12 @@ export let jobs = [
     loadToDropTime: "",
     dropSite: "",
     dropTime: 60,
-    endTime:"",
+    endTime: new Date(2024, 0, 0, 3, 0, 0, 0),
     nextLocationNumber: "",
   },
   {
     number: 3,
-    startTime:jobs[2].endTime,
+    startTime: "",
     startLocation: "",
     startAddress: "",
     startToLoadTime: "",
@@ -53,12 +53,12 @@ export let jobs = [
     loadToDropTime: "",
     dropSite: "",
     dropTime: 60,
-    endTime:"",
+    endTime: new Date(2024, 0, 0, 3, 0, 0, 0),
     nextLocationNumber: "",
   },
   {
     number: 4,
-    startTime:jobs[3].endTime,
+    startTime: "",
     startLocation: "",
     startAddress: "",
     startToLoadTime: "",
@@ -67,10 +67,15 @@ export let jobs = [
     loadToDropTime: "",
     dropSite: "",
     dropTime: 60,
-    endTime:"",
+    endTime: new Date(2024, 0, 0, 3, 0, 0, 0),
     nextLocationNumber: "",
   },
 ];
+
+jobs[1].endTime = jobs[0].endTime;
+jobs[2].endTime = jobs[1].endTime;
+jobs[3].endTime = jobs[2].endTime;
+jobs[4].endTime = jobs[3].endTime;
 
 export let loadSite = [
   {
