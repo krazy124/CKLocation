@@ -1,4 +1,5 @@
 import { store, loadSite, jobs } from "./location.js";
+//import { obj1 } from "./playzone.js";
 
 //Start Section these 2 functions add all selects and add the options to those selects which includes all the load locations and stores. These 2 functions start as soo as the page opens------------------------------------
 function addDropLocation(i) {
@@ -20,6 +21,7 @@ function addDropLocation(i) {
 
   document.getElementById("dayDiv").appendChild(newSelect);
 }
+
 function addLoadSite(i) {
   //creates select and sets attributes
   let newSelect = document.createElement("select");
@@ -114,201 +116,158 @@ function loadDropDistance() {
   }
 }
 
-function numberToTerminal(input) {
-  if ((input = 0)) {
-    return "terminal";
-  } else if ((input = 1)) {
-    return "magellan";
-  } else if ((input = 2)) {
-    return "motiva";
-  } else if ((input = 3)) {
-    return "nustar";
-  } else if ((input = 4)) {
-    return "aledo";
-  } else if ((input = 5)) {
-    return "caddo";
-  }
-}
-
-function startToLoadCombo() {
-  for (let index = 0; index < 4; index++) {
-    let daSite = numberToTerminal(jobs[i].nextLocationNumber);
-    console.log("daSite is: " + daSite);
-    let loadLoc = "aledo";
-    let dist2Alledo = store[1].loadLoc;
-    console.log("d to A " + dist2Alledo);
-    let theEval = eval(`"Distance to Aledo is: "+${dist2Alledo}`);
-    console.log(theEval);
-    //jobs[i].startToLoadTime = store[jobs[i].startLocation];
-  }
-}
-
-function startToLoadCalc() {
+function callNumToTerm() {
   for (var i = 0; i < 4; i++) {
-    let veri = numberToTerminal(jobs[i].loadSite);
-
-    jobs[i].startToLoadTime = eval(`store[${i}].${veri}`);
+    numberToTerminal(i);
   }
 }
-function addTime(timeIn, change) {
-  const start2 = new Date(timeIn);
-  start2.setMinutes(start2.getMinutes() + change);
-  console.log(f.format(start2));
+
+function numberToTerminal(jobNum) {
+  if (jobs[jobNum].loadSite == 0) {
+    jobs[jobNum].startToLoadTime = 0;
+  } else if (jobs[jobNum].loadSite == 1) {
+    jobs[jobNum].startToLoadTime = store[jobs[jobNum].startLocation].magellan;
+  } else if (jobs[jobNum].loadSite == 2) {
+    jobs[jobNum].startToLoadTime = store[jobs[jobNum].startLocation].motiva;
+  } else if (jobs[jobNum].loadSite == 3) {
+    jobs[jobNum].startToLoadTime = store[jobs[jobNum].startLocation].nustar;
+  } else if (jobs[jobNum].loadSite = 4) {
+    jobs[jobNum].startToLoadTime = store[jobs[jobNum].startLocation].aledo;
+  } else if (jobs[jobNum].loadSite = 5) {
+    jobs[jobNum].startToLoadTime = store[jobs[jobNum].startLocation].caddo;
+  }
 }
 
 //let agenda = document.getElementById('dayAgenda');
 //let addDiv = document.createElement('div');
 //addDiv.innerHTML = loadSite[0].address;
+let agenda = [];
 
-//This fumctions takes the information that was saved in the 3 arrays on locations.js and organzie them into one array. It is organized in the sequence they will be outputed into the aggenda later.
+/*let typeEvent = [
+  "Pretrip",
+  "Travel",
+  "FuelLoad",
+  "FuelDrop",
+  "FuelTruck",
+  "Return",
+  "Delay"];*/
+
+const f = new Intl.DateTimeFormat("en-us", { timeStyle: "short" });
+
+//This functions takes the information that was saved in the 3 arrays on locations.js and organzie them into one array. It is organized in the sequence they will be outputed into the aggenda later.
 function makeA() {
   //Variables----
-  const f = new Intl.DateTimeFormat("en-us", { timeStyle: "short" });
   const startTime = new Date(2024, 0, 14, 3, 0, 0, 0);
-  const pretripTime = 28;
-  let agenda = [];
 
   //functions------
-  function milli(min) {
-    return min * 60 * 1000;
-  }
+
   function addTime(time, add) {
     return time.getTime() + add;
   }
+
   function makeDate(minute) {
     return new Date(startTime.getTime() + milli(minute));
   }
+ 
+  // 
   //A's-----
-  agenda.a1 = startTime; //start pretrip
-  agenda.a2 = milli(32); //duration
-  agenda.a3 = new Date(agenda.a1.getTime() + agenda.a2); //End pretrip
-  console.log(f.format(agenda.a1) + ":" + f.format(agenda.a3));
+  agenda[1] = startTime; //start pretrip
+  agenda[2] = 25; //duration
+  agenda[3] = new Date(agenda[1].getTime() + milli(agenda[2]), store[jobs[0].startLocation].address); //End pretrip
+  agenda[4] = store[jobs[0].startLocation].address; //End pretrip
 
-  agenda.a4 = agenda.a3; //start drive
-  agenda.a5 = milli(jobs[0].startToLoadTime); //duration
-  agenda.a6 = new Date(agenda.a4.getTime() + agenda.a5); //end drive
-  console.log(f.format(agenda.a4) + ":" + f.format(agenda.a6));
+  agenda[5] = jobs[0].startToLoadTime; //duration
+  agenda[6] = new Date(agenda[3].getTime() + milli(agenda[5])); //end drive
 
-  agenda.a7 = agenda.a6; //start load
-  agenda.a8 = milli(jobs[0].loadTime); //duration
-  agenda.a9 = new Date(agenda.a7.getTime() + agenda.a8); //end drive
-  console.log(f.format(agenda.a7) + ":" + f.format(agenda.a9));
+  agenda[7] = agenda[6]; //start load
+  agenda[8] = jobs[0].loadTime; //duration
+  agenda[9] = new Date(agenda[7].getTime() + milli(agenda[8])); //end load
 
-  agenda.a10 = agenda.a9; //start drive
-  agenda.a11 = milli(jobs[0].loadToDropTime); //duration
-  agenda.a12 = new Date(agenda.a10.getTime() + agenda.a11); //end drive
-  console.log(f.format(agenda.a10) + ":" + f.format(agenda.a12));
+  agenda[10] = agenda[9]; //start drive
+  agenda[11] = jobs[0].loadToDropTime; //duration
+  agenda[12] = new Date(agenda[10].getTime() + milli(agenda[11])); //end drive
 
-  agenda.a13 = agenda.a12; //start drop
-  agenda.a14 = milli(jobs[0].dropTime); //duration
-  agenda.a15 = new Date(agenda.a12.getTime() + agenda.a14); //end drop
-  console.log(f.format(agenda.a13) + ":" + f.format(agenda.a15));
+  agenda[13] = agenda[12]; //start drop
+  agenda[14] = jobs[0].dropTime; //duration
+  agenda[15] = new Date(agenda[12].getTime() + milli(agenda[14])); //end drop
 
-  agenda.a16 = agenda.a15; //start drive
-  agenda.a17 = milli(jobs[1].startToLoadTime); //duration
-  agenda.a18 = new Date(agenda.a16.getTime() + agenda.a17); //end drive
-  console.log(f.format(agenda.a16) + ":" + f.format(agenda.a18));
+  agenda[16] = agenda[15]; //start drive
+  agenda[17] = jobs[1].startToLoadTime; //duration
+  agenda[18] = new Date(agenda[16].getTime() + milli(agenda[17])); //end drive
 
-  agenda.a19 = agenda.a18; //start load
-  agenda.a20 = milli(jobs[1].loadTime); //duration
-  agenda.a21 = new Date(agenda.a19.getTime() + agenda.a20); //end drive
-  console.log(f.format(agenda.a19) + ":" + f.format(agenda.a20));
+  agenda[19] = agenda[18]; //start load
+  agenda[20] = jobs[1].loadTime; //duration
+  agenda[21] = new Date(agenda[19].getTime() + milli(agenda[20])); //end drive
 
-  agenda.a22 = agenda.a21; //start drive
-  agenda.a23 = milli(jobs[1].loadToDropTime); //duration
-  agenda.a24 = new Date(agenda.a22.getTime() + agenda.a23); //end drive
-  console.log(f.format(agenda.a22) + ":" + f.format(agenda.a24));
+  agenda[22] = agenda[21]; //start drive
+  agenda[23] = jobs[1].loadToDropTime; //duration
+  agenda[24] = new Date(agenda[22].getTime() + milli(agenda[23])); //end drive
 
-  agenda.a25 = agenda.a24; //start drop
-  agenda.a26 = milli(jobs[1].dropTime); //duration
-  agenda.a27 = new Date(agenda.a25.getTime() + agenda.a26); //end drop
-  console.log(f.format(agenda.a25) + ":" + f.format(agenda.a27));
+  agenda[25] = agenda[24]; //start drop
+  agenda[26] = jobs[1].dropTime; //duration
+  agenda[27] = new Date(agenda[25].getTime() + milli(agenda[26])); //end drop
 
-  agenda.a28 = agenda.a27; //start drive
-  agenda.a29 = milli(jobs[2].startToLoadTime); //duration
-  agenda.a30 = new Date(agenda.a28.getTime() + agenda.a29); //end drive
-  console.log(f.format(agenda.a28) + ":" + f.format(agenda.a30));
+  agenda[28] = agenda[27]; //start drive
+  agenda[29] = jobs[2].startToLoadTime; //duration
+  agenda[30] = new Date(agenda[28].getTime() + milli(agenda[29])); //end drive
 
-  agenda.a31 = agenda.a30; //start load
-  agenda.a32 = milli(jobs[2].loadTime); //duration
-  agenda.a33 = new Date(agenda.a31.getTime() + agenda.a32); //end drive
-  console.log(f.format(agenda.a31) + ":" + f.format(agenda.a33));
+  agenda[31] = agenda[30]; //start load
+  agenda[32] = jobs[2].loadTime; //duration
+  agenda[33] = new Date(agenda[31].getTime() + milli(agenda[32])); //end drive
 
-  agenda.a34 = agenda.a33; //start drive
-  agenda.a35 = milli(jobs[2].loadToDropTime); //duration
-  agenda.a36 = new Date(agenda.a34.getTime() + agenda.a35); //end drive
-  console.log(f.format(agenda.a34) + ":" + f.format(agenda.a36));
+  agenda[34] = agenda[33]; //start drive
+  agenda[35] = jobs[2].loadToDropTime; //duration
+  agenda[36] = new Date(agenda[34].getTime() + milli(agenda[35])); //end drive
 
-  agenda.a37 = agenda.a36; //start drop
-  agenda.a38 = milli(jobs[2].dropTime); //duration
-  agenda.a39 = new Date(agenda.a37.getTime() + agenda.a38); //end drop
-  console.log(f.format(agenda.a37) + ":" + f.format(agenda.a39));
+  agenda[37] = agenda[36]; //start drop
+  agenda[38] = jobs[2].dropTime; //duration
+  agenda[39] = new Date(agenda[37].getTime() + milli(agenda[38])); //end drop
 
-  agenda.a40 = agenda.a39; //start drive
-  agenda.a41 = milli(jobs[3].startToLoadTime); //duration
-  agenda.a42 = new Date(agenda.a40.getTime() + agenda.a41); //end drive
-  console.log(f.format(agenda.a40) + ":" + f.format(agenda.a42));
+  agenda[40] = agenda[39]; //start drive
+  agenda[41] = jobs[3].startToLoadTime; //duration
+  agenda[42] = new Date(agenda[40].getTime() + milli(agenda[41])); //end drive
 
-  agenda.a43 = agenda.a42; //start load
-  agenda.a44 = milli(jobs[3].loadTime); //duration
-  agenda.a45 = new Date(agenda.a43.getTime() + agenda.a44); //end drive
-  console.log(f.format(agenda.a43) + ":" + f.format(agenda.a45));
+  agenda[43] = agenda[42]; //start load
+  agenda[44] = jobs[3].loadTime; //duration
+  agenda[45] = new Date(agenda[43].getTime() + milli(agenda[44])); //end drive
 
-  agenda.a46 = agenda.a45; //start drive
-  agenda.a47 = milli(jobs[3].loadToDropTime); //duration
-  agenda.a48 = new Date(agenda.a46.getTime() + agenda.a47); //end drive
-  console.log(f.format(agenda.a46) + ":" + f.format(agenda.a48));
+  agenda[46] = agenda[45]; //start drive
+  agenda[47] = jobs[3].loadToDropTime; //duration
+  agenda[48] = new Date(agenda[46].getTime() + milli(agenda[47])); //end drive
 
-  agenda.a49 = agenda.a48; //start drop
-  agenda.a50 = milli(jobs[3].dropTime); //duration
-  agenda.a51 = new Date(agenda.a49.getTime() + agenda.a50); //end drop
-  console.log(f.format(agenda.a49) + ":" + f.format(agenda.a51));
+  agenda[49] = agenda[48]; //start drop
+  agenda[50] = jobs[3].dropTime; //duration
+  agenda[51] = new Date(agenda[49].getTime() + milli(agenda[50])); //end drop
 
-  agenda.a52 = agenda.a51;
-  console.log(
-    "Return to terminal" + f.format(agenda.a51) + ":" + f.format(agenda.a54)
-  );
-
+  agenda[52] = agenda[51];
+  //addDiv(obj1[0],obj1[1],obj1[2],obj1[3],obj1[4]);
   //cat.appendChild(subEntry2);
 
-  /*function notSure(){
-  let subEntry3 = document.createElement('div');
-  subEntry3.className = 'middleLower';
-  subEntry3.innerHTML = "bird";
-  cat.appendChild(subEntry3);
-
-  let subEntry4 = document.createElement('div');
-  subEntry4.className = 'rightSide';
-  subEntry4.innerHTML = "frog";
-  cat.appendChild(subEntry4);
-
-  document.getElementById('mainDiv').appendChild(cat);
-  }*/
 }
 
 //Creates a new timeblock in the agneda and outputs it on the bottom of the screen
-function addDiv() {
+function addDiv(eventType, startTime, duration, newTime, address) {
   let timeBlock = document.createElement("div");
   timeBlock.className = "timeaddEntry";
 
   let subEntry = document.createElement("div");
   subEntry.className = "leftSide";
-  subEntry.innerHTML = `cat<br>min`;
+  subEntry.innerHTML = obj1[0] + "<br>" + obj1[1] + "<br>min";
   timeBlock.appendChild(subEntry);
 
   let subEntry2 = document.createElement("div");
   subEntry2.className = "middleTop";
-  subEntry2.innerHTML = "dog";
+  subEntry2.innerHTML = f.format(obj1[2]);
   timeBlock.appendChild(subEntry2);
 
   let subEntry3 = document.createElement("div");
   subEntry3.className = "middleLower";
-  subEntry3.innerHTML = "bird";
+  subEntry3.innerHTML = f.format(obj1[3]);
   timeBlock.appendChild(subEntry3);
 
   let subEntry4 = document.createElement("div");
   subEntry4.className = "rightSide";
-  subEntry4.innerHTML = "frog";
+  subEntry4.innerHTML = obj1[4];
   timeBlock.appendChild(subEntry4);
 
   document.getElementById("mainDiv").appendChild(timeBlock);
@@ -323,17 +282,11 @@ function showJobsArrays() {
 document.getElementById("goButton").addEventListener("click", () => {
   saveLocations();
   loadDropDistance();
-  //startToLoadCalc();
-  //startToLoadCombo();
+  callNumToTerm();
   showJobsArrays();
-
-  console.log(jobs[0].loadSite);
-  console.log(numberToTerminal(1));
-  console.log(eval(`store[0].magellan`));
-  // use later
-  //makeA();
+  makeA();
+  //console.log(obj1);
   //addDiv();
 });
+
 //addTime(start,97);
-/*test.setMinutes(test.getMinutes()+90);
-console.log(f.format(test));*/

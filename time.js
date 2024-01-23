@@ -36,3 +36,36 @@
    const f = new Intl.DateTimeFormat("en-us",{dateStyle: "full",})
    console.log(f.format(start));
    
+   
+   
+     let obj14 = {
+       eventType: "Travel",
+       duration: jobs[3].startToLoadTime,
+       begin: obj13.end,
+       end: new Date(obj13.end.getTime() + milli(jobs[3].startToLoadTime)),
+       location: "Driving"
+     }; //end drive
+   
+     let obj15 = {
+       eventType: "Load",
+       duration: jobs[3].loadTime,
+       begin: obj14.end,
+       end: new Date(obj14.begin.getTime() + milli(jobs[3].loadTime)),
+       location: jobs[3].loadSite
+     }; //end drive
+   
+     let obj16 = {
+       eventType: "Travel",
+       duration: jobs[3].loadToDropTime,
+       begin: obj15.end,
+       end: new Date(obj15.end.getTime() + milli(jobs[3].loadToDropTime)),
+       location: "Driving"
+     }; //end drive
+   
+     let obj17 = {
+       eventType: "Fuel Drop",
+       duration: jobs[3].loadToDropTime,
+       begin: obj16.end,
+       end: new Date(obj16.end.getTime() + milli(jobs[3].loadToDropTime)),
+       location: jobs[3].dropSite
+     }; //end drive

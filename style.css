@@ -20,43 +20,46 @@
 
 .timeaddEntry {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 6fr;
-  grid-template-rows: 20px 20px;
+  grid-template-columns: 15% 15% 70%;
+  grid-template-rows: 25px 25px;
   grid-template-areas:
     "leftSide middleTop rightSide"
     "leftSide middleLower rightSide";
-  margin: 15px;
+  margin: 10px;
 }
 .leftSide {
   grid-area: leftSide;
-  background-color: red;
+  background-color: #C4E1F0;
   margin: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  line-height: 80%;
 }
 .middleTop {
   grid-area: middleTop;
-  background-color: blue;
+  background-color: greenyellow;
   margin: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  font-size: small;
 }
 .middleLower {
   grid-area: middleLower;
-  background-color: green;
+  background-color: #FB6767;
   margin: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  font-size: small;
 }
 .rightSide {
   grid-area: rightSide;
-  background-color: purple;
+  background-color: #C4E1F0;
   margin: 1px;
   border-radius: 5px;
   padding-left: 5px;
