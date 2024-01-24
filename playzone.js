@@ -6,6 +6,7 @@ function milli(min) {
 
 export let obj1 = [
   {
+    num:0,
     eventType: "Pretrip",
     duration: jobs[0].pretrip,
     begin: jobs[0].startTime,
@@ -13,20 +14,28 @@ export let obj1 = [
     location: store[jobs[0].startLocation].address,
   },
   {
+    num:1,
     eventType: "Travel",
     duration: jobs[0].startToLoadTime,
     begin: new Date(jobs[0].startTime.getTime() + milli(jobs[0].pretrip)),
-    end: new Date(obj1[1].begin.getTime() + milli(jobs[0].startToLoadTime)),
+    end: "",
     location: "Driving",
   },
-  /* {
+
+ {
+   num:2,
      eventType: "Load",
      duration: jobs[0].loadTime,
-     begin: ob1[1].end,
-     end: new Date(obj2.begin.getTime() + milli(jobs[0].loadTime)),
+     begin: "",
+     end: "",
      location: jobs[0].loadSite
   },
+  /*
+  obj1[2].end = new Date(obj2.begin.getTime() + milli(jobs[0].loadTime));
+  */
+  /*
    {
+   num:3,
      eventType: "Travel",
      duration: jobs[0].loadToDropTime,
      begin: new Date(obj2.begin.getTime() + milli(jobs[0].loadTime)),
@@ -34,6 +43,7 @@ export let obj1 = [
      location: "Driving"
   },
    {
+   num:4,
      eventType: "Fuel Drop",
      duration: jobs[0].loadToDropTime,
      begin: new Date(obj3.end.getTime() + milli(jobs[0].loadToDropTime)),
@@ -41,6 +51,7 @@ export let obj1 = [
      location: jobs[0].dropSite
   },
    {
+   num:5,
      eventType: "Travel",
      duration: jobs[1].startToLoadTime,
      begin: new Date(obj4.end.getTime() + milli(jobs[0].loadToDropTime)),
@@ -48,6 +59,7 @@ export let obj1 = [
      location: "Driving"
   },
    {
+   num:6,
      eventType: "Load",
      duration: jobs[1].loadTime,
      begin: new Date(obj5.end.getTime() + milli(jobs[1].startToLoadTime)),
@@ -55,6 +67,7 @@ export let obj1 = [
      location: jobs[1].loadSite
   },
    {
+   num:7,
      eventType: "Travel",
      duration: jobs[1].loadToDropTime,
      begin: new Date(obj6.begin.getTime() + milli(jobs[1].loadTime)),
@@ -62,6 +75,7 @@ export let obj1 = [
      location: "Driving"
   },
    {
+   num:8,
      eventType: "Fuel Drop",
      duration: jobs[1].loadToDropTime,
      begin: new Date(obj7.end.getTime() + milli(jobs[1].loadToDropTime)),
@@ -69,6 +83,7 @@ export let obj1 = [
      location: jobs[1].dropSite
   },
    {
+   num:9,
      eventType: "Travel",
      duration: jobs[2].startToLoadTime,
      begin: new Date(obj8.end.getTime() + milli(jobs[1].loadToDropTime)),
@@ -76,6 +91,7 @@ export let obj1 = [
      location: "Driving"
   },
    {
+   num: 10,
      eventType: "Load",
      duration: jobs[2].loadTime,
      begin: new Date(obj9.end.getTime() + milli(jobs[2].startToLoadTime)),
@@ -83,6 +99,7 @@ export let obj1 = [
      location: jobs[2].loadSite
   },
    {
+   num:11,
      eventType: "Travel",
      duration: jobs[2].loadToDropTime,
      begin: new Date(obj10.begin.getTime() + milli(jobs[2].loadTime)),
@@ -90,6 +107,7 @@ export let obj1 = [
      location: "Driving"
   },
    {
+   num:12,
      eventType: "Fuel Drop",
      duration: jobs[2].loadToDropTime,
      begin: new Date(obj11.end.getTime() + milli(jobs[2].loadToDropTime)),
@@ -97,6 +115,7 @@ export let obj1 = [
      location: jobs[2].dropSite
   },
    {
+   num:13,
      eventType: "Travel",
      duration: jobs[3].startToLoadTime,
      begin: new Date(obj12.end.getTime() + milli(jobs[2].loadToDropTime)),
@@ -104,6 +123,7 @@ export let obj1 = [
      location: "Driving"
   },
    {
+   num:14,
      eventType: "Load",
      duration: jobs[3].loadTime,
      begin: new Date(obj13.end.getTime() + milli(jobs[3].startToLoadTime)),
@@ -111,6 +131,7 @@ export let obj1 = [
      location: jobs[3].loadSite
   },
    {
+   num:15,
      eventType: "Travel",
      duration: jobs[3].loadToDropTime,
      begin: new Date(obj14.begin.getTime() + milli(jobs[3].loadTime)),
@@ -118,6 +139,7 @@ export let obj1 = [
      location: "Driving"
   },
    {
+   num:16,
      eventType: "Fuel Drop",
      duration: jobs[3].loadToDropTime,
      begin: new Date(obj15.end.getTime() + milli(jobs[3].loadToDropTime)),
@@ -125,6 +147,7 @@ export let obj1 = [
      location: jobs[3].dropSite
   },
    {
+   num:17,
      eventType: "Return to Terminal",
      duration: store[jobs[3].dropSite].toTerminal,
      begin: new Date(obj16.end.getTime() + milli(jobs[3].loadToDropTime)),
@@ -132,6 +155,10 @@ export let obj1 = [
      location: jobs[3].dropSite
   }*/
 ]; //end drive
+
+  obj1[1].end = new Date(obj1[1].begin.getTime() + milli(obj1[1].duration));
+
+
 
 /*console.log(obj3.eventType);
  console.log(obj3.duration);

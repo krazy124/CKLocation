@@ -21,7 +21,6 @@ function addDropLocation(i) {
 
   document.getElementById("dayDiv").appendChild(newSelect);
 }
-
 function addLoadSite(i) {
   //creates select and sets attributes
   let newSelect = document.createElement("select");
@@ -50,7 +49,7 @@ for (var i = 0; i < 4; i++) {
 }
 //End of Start Section-----------------------------------------------------------------------------------------
 
-//Takes the optins that have been selected by the user and save them to jobs array in locations.js
+//Takes the options that have been selected by the user and save them to jobs array in locations.js
 //added
 function saveLocations() {
   jobs[0].loadSite = parseInt(document.getElementById("loadLocation0").value);
@@ -158,21 +157,16 @@ const f = new Intl.DateTimeFormat("en-us", { timeStyle: "short" });
 function makeA() {
   //Variables----
   const startTime = new Date(2024, 0, 14, 3, 0, 0, 0);
-
   //functions------
-
   function addTime(time, add) {
     return time.getTime() + add;
   }
   function milli(min) {
     return min * 60 * 1000;
   }
-
   function makeDate(minute) {
     return new Date(startTime.getTime() + milli(minute));
   }
-
-  //
   //A's-----
   agenda[1] = startTime; //start pretrip
   agenda[2] = 25; //duration
@@ -246,7 +240,6 @@ function makeA() {
   agenda[51] = new Date(agenda[49].getTime() + milli(agenda[50])); //end drop
 
   agenda[52] = agenda[51];
-  //addDiv(obj1[0],obj1[1],obj1[2],obj1[3],obj1[4]);
   //cat.appendChild(subEntry2);
 }
 
@@ -257,25 +250,28 @@ function addDiv(eventType, startTime, duration, newTime, address) {
 
   let subEntry = document.createElement("div");
   subEntry.className = "leftSide";
-  subEntry.innerHTML = obj1[0] + "<br>" + obj1[1] + "<br>min";
+  subEntry.innerHTML = obj1[0].eventType + "<br>" + obj1[0].duration + "<br>min";
   timeBlock.appendChild(subEntry);
 
   let subEntry2 = document.createElement("div");
   subEntry2.className = "middleTop";
-  subEntry2.innerHTML = f.format(obj1[2]);
+  subEntry2.innerHTML = f.format(obj1[0].begin);
   timeBlock.appendChild(subEntry2);
 
   let subEntry3 = document.createElement("div");
   subEntry3.className = "middleLower";
-  subEntry3.innerHTML = f.format(obj1[3]);
+  subEntry3.innerHTML = f.format(obj1[0].end);
   timeBlock.appendChild(subEntry3);
 
   let subEntry4 = document.createElement("div");
   subEntry4.className = "rightSide";
-  subEntry4.innerHTML = obj1[4];
+  subEntry4.innerHTML = obj1[0].location;
   timeBlock.appendChild(subEntry4);
 
   document.getElementById("mainDiv").appendChild(timeBlock);
+  document.getElementById('testTime').innerHTML += f.format(obj1[1].begin);
+  document.getElementById('testTime').innerHTML += obj1[1].duration;
+  document.getElementById('testTime').innerHTML += f.format(obj1[1].end);
 }
 
 function showJobsArrays() {
@@ -290,8 +286,6 @@ document.getElementById("goButton").addEventListener("click", () => {
   callNumToTerm();
   showJobsArrays();
   makeA();
-  //console.log(obj1);
-  //addDiv();
+  addDiv();
 });
 
-//addTime(start,97);

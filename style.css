@@ -20,7 +20,7 @@
 
 .timeaddEntry {
   display: grid;
-  grid-template-columns: 15% 15% 70%;
+  grid-template-columns: 20% 17% 63%;
   grid-template-rows: 25px 25px;
   grid-template-areas:
     "leftSide middleTop rightSide"
@@ -32,10 +32,12 @@
   background-color: #C4E1F0;
   margin: 1px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  line-height: 80%;
+  line-height: 84%;
+  text-align: center;
 }
 .middleTop {
   grid-area: middleTop;
@@ -63,4 +65,7 @@
   margin: 1px;
   border-radius: 5px;
   padding-left: 5px;
+  text-align: center;
+  line-height: 100%;
+  padding-top: 8px;
 }
